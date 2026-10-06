@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="Perhitungan Belanja Udin"/>
+        <attribute name="authors" value="AI"/>
+        <attribute name="about" value="Flowchart Perhitungan Belanja Udin"/>
+        <attribute name="saved" value="2026-09-28 07:50:00 PM"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="uangUdin" type="Integer" array="False" size=""/>
+            <assign variable="uangUdin" expression="200000"/>
+            <declare name="totalBuku, totalPulpen, totalFlashdisk, totalSebelumDiskon, diskon, hargaSetelahDiskon, pajak, totalBayar, kembalian" type="Real" array="False" size=""/>
+            
+            <comment text="Menghitung total per barang"/>
+            <assign variable="totalBuku" expression="3 * 25000"/>
+            <assign variable="totalPulpen" expression="2 * 8000"/>
+            <assign variable="totalFlashdisk" expression="1 * 75000"/>
+            
+            <comment text="Menghitung total, diskon, dan pajak"/>
+            <assign variable="totalSebelumDiskon" expression="totalBuku + totalPulpen + totalFlashdisk"/>
+            <assign variable="diskon" expression="totalSebelumDiskon * 0.10"/>
+            <assign variable="hargaSetelahDiskon" expression="totalSebelumDiskon - diskon"/>
+            <assign variable="pajak" expression="hargaSetelahDiskon * 0.11"/>
+            <assign variable="totalBayar" expression="hargaSetelahDiskon + pajak"/>
+            
+            <comment text="Menghitung kembalian"/>
+            <assign variable="kembalian" expression="uangUdin - totalBayar"/>
+            
+            <comment text="Output semua hasil"/>
+            <output expression="&quot;Total Harga Buku: Rp &quot; &amp; totalBuku" newline="True"/>
+            <output expression="&quot;Total Harga Pulpen: Rp &quot; &amp; totalPulpen" newline="True"/>
+            <output expression="&quot;Total Harga Flashdisk: Rp &quot; &amp; totalFlashdisk" newline="True"/>
+            <output expression="&quot;Total Seluruh Barang Sebelum Diskon: Rp &quot; &amp; totalSebelumDiskon" newline="True"/>
+            <output expression="&quot;Besarnya Diskon 10%: Rp &quot; &amp; diskon" newline="True"/>
+            <output expression="&quot;Harga Barang Setelah Diskon: Rp &quot; &amp; hargaSetelahDiskon" newline="True"/>
+            <output expression="&quot;Besarnya Pajak 11%: Rp &quot; &amp; pajak" newline="True"/>
+            <output expression="&quot;Total Pembayaran Setelah Pajak: Rp &quot; &amp; totalBayar" newline="True"/>
+            <output expression="&quot;Uang Kembalian Udin: Rp &quot; &amp; kembalian" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
